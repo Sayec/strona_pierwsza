@@ -1,9 +1,10 @@
+let div_start = document.querySelector('nav').offsetTop;
 let div1 = document.querySelector('nav').offsetHeight;
 let menu = document.querySelector('nav')
 let header = document.querySelector('header');
 document.addEventListener('scroll', function (even) {
     console.log(window.scrollY)
-    if (window.scrollY >= div1) {
+    if (window.scrollY >= div1 + div_start) {
         menu.classList.add('is-active');
         header.style.marginTop = div1 + 'px';
     } else {
@@ -41,10 +42,11 @@ allSections.forEach((sec) => {
     // ['scroll'].forEach(function (even) {
     document.addEventListener('scroll', function (even) {
         let section1 = document.querySelector('section.' + sec.classList[0])
+        let flexSection = document.querySelector('section.' + sec.classList[0] + ' .moving')
         if (window.scrollY > section1.offsetTop + section1.offsetHeight * 0.25 - window.innerHeight) {
-            sec.classList.add('active');
+            flexSection.classList.add('active');
         } else {
-            sec.classList.remove('active');
+            flexSection.classList.remove('active');
         }
     })
     // })

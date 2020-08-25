@@ -3,17 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Główna strona</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <!-- <link rel="stylesheet" href="css/mainv2.css"> -->
+    <link rel="stylesheet" href="css/main2.css">
 </head>
 
 <body>
+    <div class="line"></div>
     <div class="action-bar">
         <ul>
             <li>
-                <p> Kotakt</p>
+                <a href="tel:+781189972">781189972</a>
             </li>
             <li>
                 <p>cos</p>
@@ -24,42 +29,89 @@
         </ul>
     </div>
     <nav>
-        <div class="nav-flex">
-            <div class="logo"><a href="#"><img src="images/astronomy-1294337_640.png" alt="logo"></a></div>
-            <ul>
-                <li><a href="" class='about'>O nas</a></li>
-                <li><a href="" class="offer">Oferta</a></li>
-                <li><a href="" class="realizations">Realizacje</a></li>
-                <li><a href="" class="contact">Kontakt</a></li>
-            </ul>
-            <div class="full"></div>
+        <div class="logo"><a href="#"><img src="images/astronomy-1294337_640.png" alt="logo"></a></div>
+        <!-- <div class="nav-flex"> -->
+
+        <ul>
+            <li><a data-page='about' href="#about" class='about'>O nas</a></li>
+            <li><a data-page='offer' href="#offer" class="offer">Oferta</a>
+                <ul class='dropdown'>
+                    <li><a href="">testy1</a></li>
+                    <li><a href="">tes1</a></li>
+                </ul>
+            </li>
+            <li><a data-page='realizations' href="#realizations" class="realizations">Realizacje</a></li>
+            <li><a data-page='contact' href="#contact" class="contact">Kontakt</a></li>
+            <div class="bubble"></div>
+        </ul>
+        <!-- </div> -->
+        <div class="hamburger">
+            <div class='line1'></div>
+            <div class='line2'></div>
+            <div class='line3'></div>
         </div>
     </nav>
     <header>
-        <div class="cover"></div>
+        <div class="cover">
+            <!-- <img src="images/milky-way-984050_1920.jpg" alt=""> -->
+        </div>
         <h1>Hello!</h1>
-
     </header>
-    <section class='about'>
+    <section class='about' id='about'>
         <div class="moving">
             <h1>o nas</h1>
-            <div class="flex">
-                <div class="obraz">
-                    <img src="images/telescope-937871_1280.jpg" alt=""></div>
-                <div class="tekst">
-                    <p>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquam
-                        cupiditate,
-                        pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur
-                        excepturi error harum, inventore illum! lorem </p>
+            <div class="content">
+                <div class="flex">
+                    <div class="obraz">
+                        <img src="images/telescope-937871_1280.jpg" alt=""></div>
+                    <div class="tekst">
+                        <p>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquam
+                            cupiditate,
+                            pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores
+                            consequuntur
+                            excepturi error harum, inventore illum! lorem </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="offer">
+    <section class="offer" id='offer'>
         <div class="moving">
             <h1>oferta</h1>
-            <div class="flex">
-                <div class="obraz">
+            <div class="content">
+                <div class="offers offer1">
+                    <h2>Oferta1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quae praesentium
+                        laboriosam
+                        fugit veritatis doloremque eius nulla odio consequatur labore id exercitationem vitae
+                        aperiam
+                        officia nam, explicabo soluta similique deleniti!</p>
+                </div>
+                <div class="offers offer2">
+                    <h2>Oferta2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem natus minima
+                        reiciendis,
+                        voluptatem, perspiciatis accusantium provident facere, similique sed modi beatae
+                        asperiores
+                        expedita perferendis aperiam consectetur voluptate eveniet qui id!</p>
+                </div>
+                <div class="offers offer3">
+                    <h2>Oferta3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem natus minima
+                        reiciendis,
+                        voluptatem, perspiciatis accusantium provident facere, similique sed modi beatae
+                        asperiores
+                        expedita perferendis aperiam consectetur voluptate eveniet qui id!</p>
+                </div>
+                <div class="offers offer4">
+                    <h2>Oferta4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem natus minima
+                        reiciendis,
+                        voluptatem, perspiciatis accusantium provident facere, similique sed modi beatae
+                        asperiores
+                        expedita perferendis aperiam consectetur voluptate eveniet qui id!</p>
+                </div>
+                <!-- <div class="obraz">
 
                     <img src="images/telescope-937871_1280.jpg" alt=""></div>
                 <div class="tekst">
@@ -67,30 +119,46 @@
                         cupiditate,
                         pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur
                         excepturi error harum, inventore illum! lorem </p>
-                </div>
+                </div> -->
+
             </div>
         </div>
     </section>
-    <section class="realizations">
+    <section class="realizations" id='realizations'>
         <div class="moving">
             <h1>nasze realizacje</h1>
-            <div class="flex">
-                <div class="obraz">
+            <div class="content">
+                <div class="flex">
+                    <div class="obraz active">
 
-                    <img src="images/telescope-937871_1280.jpg" alt=""></div>
-                <div class="tekst">
-                    <p>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquam
-                        cupiditate,
-                        pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur
-                        excepturi error harum, inventore illum! lorem </p>
+                        <img src="images/telescope-937871_1280.jpg" alt=""></div>
+                    <div class="tekst active">
+                        <p>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquam
+                            cupiditate,
+                            pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores
+                            consequuntur
+                            excepturi error harum, inventore illum! lorem </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id='contact'>
         <div class="moving">
+
             <h1>masz pytania? zadzwoń</h1>
-            <div class="flex">
+            <div class="content">
+                <div class="form">
+                    <h3>Formularz kontaktowy</h3>
+                    <input type="text" name="name" id="" placeholder="Imię">
+                    <input type="text" name="mail" id="" placeholder="Adres e-mail">
+                    <input type="text" name="telefon" id="" placeholder="Telefon">
+                    <input type="text" name="topic" id="" placeholder="Temat">
+                    <input type="text" name="message" id="" placeholder="Wiadomość">
+                    <input type="submit" value="Wyslij wiadomość">
+                </div>
+            </div>
+            <!-- <div class="flex">
                 <div class="obraz">
                     <img src="images/telescope-937871_1280.jpg" alt=""></div>
                 <div class="tekst">
@@ -99,14 +167,14 @@
                         pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur
                         excepturi error harum, inventore illum! lorem </p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <footer>
         <p>Kamil Brzezowski</p>
     </footer>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </body>

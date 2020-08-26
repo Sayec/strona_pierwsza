@@ -148,7 +148,7 @@ const allAnchors = document.querySelectorAll('nav ul li a');
 const options = {
     threshold: 0.6,
 };
-let observer = new IntersectionObserver(navCheck, options)
+// let observer = new IntersectionObserver(navCheck, options)
 
 function navCheck(entries) {
     entries.forEach(entry => {

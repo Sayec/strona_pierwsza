@@ -91,7 +91,7 @@ nav {
 
             a {
                 text-decoration: none;
-                color: black;
+                // color: black;
                 font-size: 16px;
                 transition: 0.5s;
                 /* line-height: 70px; */
@@ -101,43 +101,65 @@ nav {
                 border-radius: 5px;
                 letter-spacing: 1px;
                 font-weight: 500;
+                color: black;
+                // overflow: hidden;
 
-                &:hover {
-                    background-color: rgb(62, 94, 180);
-                    color: white;
-
-                    +ul {
-                        display: flex;
-                    }
-                }
             }
 
+            &:hover {
+                background-color: rgb(62, 94, 180);
+
+                a {
+                    color: white;
+                }
+
+                >ul {
+                    display: flex;
+                    top: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
     }
 
     ul.dropdown {
-        display: none;
+        display: flex;
+        visibility: hidden;
         position: absolute;
         // display: flex;
         flex-direction: column;
-        top: 45px;
+        top: 0%;
         z-index: 1;
         height: 100px;
         width: 100%;
         background-color: rgb(62, 94, 180);
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        transition: 0.5s;
+        // user-select: none;
 
         li {
             flex-grow: 1;
 
             a {
-                padding: 0;
+                padding: 10px 10px;
+                color: black;
+
+                &:hover {
+                    color: white;
+                }
             }
+
+
         }
 
         &:hover {
             display: flex;
+            opacity: 1;
+            top: 100%;
+            visibility: visible;
         }
     }
 

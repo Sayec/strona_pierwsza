@@ -5,12 +5,14 @@ let header = document.querySelector('header');
 const cover = document.querySelector('header .cover');
 document.addEventListener('scroll', function (even) {
     console.log(div1);
-    if (window.scrollY >= div1 + div_start) {
-        menu.classList.add('is-active');
-        header.style.marginTop = div1 + 1 + 'px';
-    } else {
-        menu.classList.remove('is-active');
-        header.style.marginTop = 0 + 'px';
+    if (window.innerWidth > 768) {
+        if (window.scrollY >= div1 + div_start) {
+            menu.classList.add('is-active');
+            header.style.marginTop = div1 + 1 + 'px';
+        } else {
+            menu.classList.remove('is-active');
+            header.style.marginTop = 0 + 'px';
+        }
     }
 })
 

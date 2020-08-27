@@ -613,13 +613,19 @@ div.line {
     }
 
     nav {
-        position: relative;
+        position: fixed;
         top: 0px;
         left: 0px;
         z-index: 3;
+        justify-content: space-between;
+        background-color: #fff;
+        width: 100%;
+
 
         .logo {
-            width: 70%;
+            // width: 70%;
+            padding-left: 10px;
+
         }
 
         // .nav-flex {
@@ -651,14 +657,19 @@ div.line {
             z-index: 3;
         }
 
-        // }
+
 
 
         .hamburger {
             display: block;
             cursor: pointer;
+            padding-right: 10px;
             z-index: 3;
         }
+    }
+
+    header {
+        margin-top: 80px;
     }
 }
 

@@ -47,24 +47,10 @@ nav {
     align-items: center;
     justify-content: space-around;
 
-    // .nav-flex {
-    //     display: flex;
-    //     position: static;
-    //     /* background-color: green; */
-    //     width: 80%;
-    //     // margin: 0 auto;
-    //     justify-content: flex-end;
-
-    // }
-
     .logo {
-        // flex-basis: 15%;
-        // margin-right: auto;
-
         img {
             height: 70px;
             display: block;
-
         }
     }
 
@@ -482,6 +468,7 @@ section.contact {
 
 section.offer {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/nyc-5323170_1920.jpg) center center;
+    background-attachment: fixed;
 
     .moving {
         .content {
@@ -596,12 +583,18 @@ div.line {
     }
 
     nav {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 3;
+
         .logo {
             width: 70%;
         }
 
         // .nav-flex {
         ul {
+            z-index: 1;
             position: absolute;
             flex-direction: column;
             right: 0px;
@@ -609,11 +602,12 @@ div.line {
             height: calc(100vh - 80px);
             align-items: center;
             justify-content: space-around;
-            width: 100%;
+            width: 70%;
             margin: 0;
             background-color: white;
             transform: translate(100%);
             transition: 0.5s ease;
+
 
             li {
                 a {
@@ -624,7 +618,7 @@ div.line {
 
         ul.active {
             transform: translate(0);
-            z-index: 1;
+            z-index: 3;
         }
 
         // }
@@ -633,7 +627,27 @@ div.line {
         .hamburger {
             display: block;
             cursor: pointer;
-
+            z-index: 3;
         }
     }
+}
+
+.body-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    display: block;
+    transition: 0.2s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.body-overlay.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }

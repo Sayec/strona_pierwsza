@@ -77,16 +77,18 @@ document.body.addEventListener('mousemove', () => {
 const burger = document.querySelector('.hamburger');
 const navUl = document.querySelector('nav ul');
 const links = document.querySelectorAll('nav ul li a');
+const overlay = document.querySelector('.body-overlay');
 
 burger.addEventListener('click', () => {
     navUl.classList.toggle('active');
+    overlay.classList.toggle('active');
 })
 links.forEach((link) => {
     link.addEventListener('click', (even) => {
 
         even.preventDefault;
-        console.log('działa');
         navUl.classList.toggle('active');
+        overlay.classList.toggle('active');
     })
 })
 

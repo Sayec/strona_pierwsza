@@ -346,6 +346,7 @@ section.offer {
         transition: 0.5s ease-out;
         overflow: hidden;
         text-align: center;
+        user-select: none;
 
         p {
             // display: none;
@@ -621,7 +622,7 @@ div.line {
         justify-content: space-between;
         background-color: #fff;
         width: 100%;
-
+        border-bottom: solid 1px black;
 
         .logo {
             // width: 70%;

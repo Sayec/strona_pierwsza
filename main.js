@@ -13,15 +13,22 @@ document.addEventListener('scroll', function (even) {
             header.style.marginTop = 0 + 'px';
         }
     }
-})
 
+})
 const offerSection = document.querySelector('section.offer');
 let heightOfferSection = window.innerHeight;
-console.log('test');
 if (window.innerWidth < 768) {
-
     offerSection.style.height = `${heightOfferSection - div1}px`;
 }
+window.addEventListener('resize', () => {
+    const offerSection = document.querySelector('section.offer');
+    heightOfferSection = window.innerHeight;
+    console.log('test');
+    if (window.innerWidth < 768) {
+        offerSection.style.height = `${heightOfferSection - div1}px`;
+    }
+})
+
 
 const t1 = new TimelineMax();
 
@@ -97,7 +104,8 @@ links.forEach((link) => {
 
         even.preventDefault;
         navUl.classList.toggle('active');
-        overlay.classList.toggle('active');
+        if (window.innerWidth < 768) overlay.classList.toggle('active');
+
     })
 })
 

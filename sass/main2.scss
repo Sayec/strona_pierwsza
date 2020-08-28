@@ -487,6 +487,7 @@ section.offer {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/nyc-5323170_1920.jpg) center center;
     background-attachment: fixed;
 
+
     .moving {
         .content {
             background-color: transparent;
@@ -671,6 +672,10 @@ div.line {
     header {
         margin-top: 80px;
     }
+}
+
+section.offer {
+    transition: height 999999s;
 }
 
 .body-overlay {

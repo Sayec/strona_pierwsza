@@ -20,7 +20,7 @@ let heightOfferSection = window.innerHeight;
 console.log('test');
 if (window.innerWidth < 768) {
 
-    offerSection.style.height = `${heightOfferSection}px`;
+    offerSection.style.height = `${heightOfferSection - div1}px`;
 }
 
 const t1 = new TimelineMax();

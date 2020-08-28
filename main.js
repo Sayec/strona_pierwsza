@@ -4,7 +4,6 @@ let menu = document.querySelector('nav')
 let header = document.querySelector('header');
 const cover = document.querySelector('header .cover');
 document.addEventListener('scroll', function (even) {
-    console.log(div1);
     if (window.innerWidth > 768) {
         if (window.scrollY >= div1 + div_start) {
             menu.classList.add('is-active');
@@ -15,6 +14,14 @@ document.addEventListener('scroll', function (even) {
         }
     }
 })
+
+const offerSection = document.querySelector('section.offer');
+let heightOfferSection = window.innerHeight;
+console.log('test');
+if (window.innerWidth < 768) {
+
+    offerSection.style.height = `${heightOfferSection}px`;
+}
 
 const t1 = new TimelineMax();
 
@@ -68,13 +75,13 @@ const tekst = document.querySelector('header h1');
 const tekstOffsetLeft = tekst.offsetLeft;
 const tekstOffsetTop = tekst.offsetTop;
 
-const line = document.querySelector('div.line');
-document.body.addEventListener('mousemove', () => {
-    // LINE FOLLOWING MOUSE
-    // line.style.transform = `translate(0%, -50%) rotate(${event.clientY/event.clientX}) `;
-    if (event.clientY <= window.innerHeight * 0.5) line.style.transform = `rotate(-${Math.atan((window.innerHeight * 0.5-event.clientY)/event.clientX)*180/Math.PI}deg)`;
-    else line.style.transform = `rotate(${Math.atan((event.clientY-window.innerHeight * 0.5)/event.clientX)*180/Math.PI}deg)`;
-})
+// const line = document.querySelector('div.line');
+// document.body.addEventListener('mousemove', () => {
+//     // LINE FOLLOWING MOUSE
+//     // line.style.transform = `translate(0%, -50%) rotate(${event.clientY/event.clientX}) `;
+//     if (event.clientY <= window.innerHeight * 0.5) line.style.transform = `rotate(-${Math.atan((window.innerHeight * 0.5-event.clientY)/event.clientX)*180/Math.PI}deg)`;
+//     else line.style.transform = `rotate(${Math.atan((event.clientY-window.innerHeight * 0.5)/event.clientX)*180/Math.PI}deg)`;
+// })
 
 const burger = document.querySelector('.hamburger');
 const navUl = document.querySelector('nav ul');
@@ -154,61 +161,61 @@ const options = {
 };
 // let observer = new IntersectionObserver(navCheck, options)
 
-function navCheck(entries) {
-    entries.forEach(entry => {
-        // allAnchors.forEach(function (anchor) {
-        //     anchor.style.color = 'black';
-        // });
-        if (entry.target.localName == 'header') {
-            console.log('header');
-            // const coords = activeAnchor.getBoundingClientRect();
-            // const directions = {
-            //     height: coords.height,
-            //     width: coords.width,
-            //     top: coords.top,
-            //     left: coords.left,
-            // };
-            if (entry.isIntersecting) {
-                allAnchors.forEach(function (anchor) {
-                    anchor.style.color = 'black';
-                });
-                // bubble.style.setProperty('left', `${directions.left}px`);
-                // bubble.style.setProperty('height', `${directions.height}px`);
-                // bubble.style.setProperty('top', `${directions.top}px`);
-                // bubble.style.setProperty('width', `${directions.width}px`)
-                bubble.style.opacity = 0;
-            }
-            return;
-        } else {
-            const classNameEntry = entry.target.className;
-            console.log(entry)
-            const activeAnchor = document.querySelector(`[data-page=${classNameEntry}]`);
-            // activeAnchor.style.color = "black";
-            // activeAnchor.style.color = "white";
-            const coords = activeAnchor.getBoundingClientRect();
-            const directions = {
-                height: coords.height,
-                width: coords.width,
-                top: coords.top,
-                left: coords.left,
-            };
-            if (entry.isIntersecting) {
-                console.log(activeAnchor)
-                allAnchors.forEach(function (anchor) {
-                    anchor.style.color = 'black';
-                });
-                bubble.style.setProperty('left', `${directions.left}px`);
-                bubble.style.setProperty('height', `${directions.height}px`);
-                bubble.style.setProperty('top', `17.5px`);
-                bubble.style.setProperty('width', `${directions.width}px`);
-                bubble.style.opacity = 1;
-                activeAnchor.style.color = 'white';
+// function navCheck(entries) {
+//     entries.forEach(entry => {
+//         // allAnchors.forEach(function (anchor) {
+//         //     anchor.style.color = 'black';
+//         // });
+//         if (entry.target.localName == 'header') {
+//             console.log('header');
+//             // const coords = activeAnchor.getBoundingClientRect();
+//             // const directions = {
+//             //     height: coords.height,
+//             //     width: coords.width,
+//             //     top: coords.top,
+//             //     left: coords.left,
+//             // };
+//             if (entry.isIntersecting) {
+//                 allAnchors.forEach(function (anchor) {
+//                     anchor.style.color = 'black';
+//                 });
+//                 // bubble.style.setProperty('left', `${directions.left}px`);
+//                 // bubble.style.setProperty('height', `${directions.height}px`);
+//                 // bubble.style.setProperty('top', `${directions.top}px`);
+//                 // bubble.style.setProperty('width', `${directions.width}px`)
+//                 bubble.style.opacity = 0;
+//             }
+//             return;
+//         } else {
+//             const classNameEntry = entry.target.className;
+//             console.log(entry)
+//             const activeAnchor = document.querySelector(`[data-page=${classNameEntry}]`);
+//             // activeAnchor.style.color = "black";
+//             // activeAnchor.style.color = "white";
+//             const coords = activeAnchor.getBoundingClientRect();
+//             const directions = {
+//                 height: coords.height,
+//                 width: coords.width,
+//                 top: coords.top,
+//                 left: coords.left,
+//             };
+//             if (entry.isIntersecting) {
+//                 console.log(activeAnchor)
+//                 allAnchors.forEach(function (anchor) {
+//                     anchor.style.color = 'black';
+//                 });
+//                 bubble.style.setProperty('left', `${directions.left}px`);
+//                 bubble.style.setProperty('height', `${directions.height}px`);
+//                 bubble.style.setProperty('top', `17.5px`);
+//                 bubble.style.setProperty('width', `${directions.width}px`);
+//                 bubble.style.opacity = 1;
+//                 activeAnchor.style.color = 'white';
 
-            }
-        }
-    })
-}
-allSections.forEach(section => {
-    observer.observe(section);
-})
-observer.observe(header);
+//             }
+//         }
+//     })
+// }
+// allSections.forEach(section => {
+//     observer.observe(section);
+// })
+// observer.observe(header);

@@ -486,8 +486,6 @@ section.contact {
 section.offer {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/nyc-5323170_1920.jpg) center center;
     background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     .moving {
         .content {
@@ -673,11 +671,14 @@ div.line {
     header {
         margin-top: 80px;
     }
+
+    section.offer {
+        height: 100%;
+        min-height: 0;
+    }
 }
 
-section.offer {
-    transition: height 999999s;
-}
+
 
 .body-overlay {
     position: fixed;

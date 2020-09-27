@@ -255,9 +255,9 @@ section {
 
 
     .moving {
-        transition: .75s;
-        transform: translateX(-100vw);
-
+        transition: .5s ease-out;
+        transform: translateX(-10vw);
+        opacity: 0;
 
         .content {
             width: 80%;
@@ -327,6 +327,7 @@ section {
 
     .moving.active {
         transform: translateX(0);
+        opacity: 1;
     }
 
     img {
@@ -423,8 +424,8 @@ section:nth-of-type(odd) {
     background-color: transparent;
 
     .moving {
-        transform: translateX(100vw);
-        transition: 0.75s ease-out;
+        transform: translateX(10vw);
+        transition: 0.5s ease-out;
     }
 
     .moving.active {

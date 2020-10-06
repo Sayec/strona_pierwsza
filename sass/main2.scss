@@ -84,7 +84,6 @@ nav {
                 letter-spacing: 1px;
                 font-weight: 500;
                 color: black;
-
             }
 
             &:hover {
@@ -133,8 +132,6 @@ nav {
                     color: white;
                 }
             }
-
-
         }
 
         &:hover {
@@ -144,8 +141,6 @@ nav {
             visibility: visible;
         }
     }
-
-
 }
 
 .hamburger {
@@ -158,8 +153,6 @@ nav {
         margin-top: 5px;
     }
 }
-
-
 
 nav.is-active {
     position: fixed;
@@ -180,7 +173,6 @@ header {
 
     // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/milky-way-984050_1920.jpg) center center;
 
-
     /* background-position: center; */
     /* background-repeat: no-repeat; */
     /* background-size: cover;  */
@@ -191,7 +183,7 @@ header {
         background-attachment: fixed;
 
         &::after {
-            content: '';
+            content: "";
             background-color: rgba(0, 0, 0, 0.3); // background: black;
             width: 100%;
             height: 100%;
@@ -207,7 +199,6 @@ header {
             object-fit: cover;
             align-items: center;
         }
-
     }
 
     h1 {
@@ -220,7 +211,6 @@ header {
         letter-spacing: 3px;
         user-select: none;
     }
-
 }
 
 /* header {
@@ -241,7 +231,6 @@ header .cover {
     background-color: rgba(0, 0, 0, 0.5);
 } */
 
-
 section {
     min-height: 100vh;
     scroll-behavior: smooth;
@@ -253,9 +242,8 @@ section {
 
     /* box-shadow: 5px 5px 10px #d2cfcf, -5px -5px 10px #d2cfcf; */
 
-
     .moving {
-        transition: .5s ease-out;
+        transition: 0.5s ease-out;
         transform: translateX(-10vw);
         opacity: 0;
 
@@ -284,14 +272,17 @@ section {
                     flex-basis: 40%;
                     flex-shrink: 0;
 
-                    img {
-                        width: 100%;
-                    }
+                    display: flex;
+                    justify-content: flex-end;
+
+                    //   img {
+                    //     width: 100%;
+                    //   }
                 }
             }
 
             &:before {
-                content: '';
+                content: "";
                 position: absolute;
                 height: 150px;
                 width: 50px;
@@ -303,7 +294,7 @@ section {
             }
 
             &:after {
-                content: '';
+                content: "";
                 position: absolute;
                 height: 150px;
                 width: 50px;
@@ -316,13 +307,11 @@ section {
         }
     }
 
-
     h1 {
         font-size: 30px;
         text-transform: uppercase;
         text-align: center;
         padding: 25px 0;
-
     }
 
     .moving.active {
@@ -332,8 +321,9 @@ section {
 
     img {
         display: block;
-        max-width: 550px;
-        max-height: 420px;
+        width: 450px;
+        height: 300px;
+        object-fit: cover;
 
         // max-width: 450px;
     }
@@ -354,7 +344,6 @@ section.offer {
             transform: translate(100vw);
             // background-color: red;
             transition: 0.1s ease-out;
-
         }
 
         &:hover {
@@ -377,13 +366,12 @@ section.offer {
         position: absolute;
         top: 10%;
         left: 10%;
-
     }
 
     .offer2 {
         position: absolute;
         top: 30%;
-        left: 70%
+        left: 70%;
     }
 
     .offer3 {
@@ -397,16 +385,13 @@ section.offer {
         top: 80%;
         left: 25%;
     }
-
 }
-
-
 
 section.realizations {
 
     div.flex .obraz,
     div.flex .tekst {
-        opacity: 0.0;
+        opacity: 0;
         transition: 1s;
     }
 
@@ -416,7 +401,6 @@ section.realizations {
         transition: 1s;
     }
 }
-
 
 section:nth-of-type(odd) {
     position: relative;
@@ -432,8 +416,6 @@ section:nth-of-type(odd) {
         transform: translateX(0);
     }
 
-
-
     .content {
         position: relative;
 
@@ -444,7 +426,7 @@ section:nth-of-type(odd) {
         }
 
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             height: 150px;
             width: 50px;
@@ -456,7 +438,7 @@ section:nth-of-type(odd) {
         }
 
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             height: 150px;
             width: 50px;
@@ -467,8 +449,6 @@ section:nth-of-type(odd) {
             transform: translate(50%, 20%);
         }
     }
-
-
 }
 
 section.offer,
@@ -486,7 +466,8 @@ section.contact {
 }
 
 section.offer {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/nyc-5323170_1920.jpg) center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(../images/nyc-5323170_1920.jpg) center center;
     background-attachment: fixed;
     background-size: cover;
 
@@ -503,18 +484,14 @@ section.contact {
     .moving {
         height: 30%;
 
-
-        input[type=text] {
+        input[type="text"] {
             width: 80%;
         }
 
-        input[type=submit] {
+        input[type="submit"] {
             width: 100%;
         }
-
     }
-
-
 }
 
 footer {
@@ -529,11 +506,10 @@ footer {
         text-align: center;
         text-transform: uppercase;
         line-height: 50px;
-
     }
 
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         transform: translate(-50%, 0%) rotate(45deg);
         z-index: 0;
@@ -557,8 +533,6 @@ div.line {
     transform-origin: 0% 50%;
     z-index: 1;
 }
-
-
 
 @media (max-width: 1024px) {
     header {
@@ -628,7 +602,6 @@ div.line {
         .logo {
             // width: 70%;
             padding-left: 10px;
-
         }
 
         // .nav-flex {
@@ -647,7 +620,6 @@ div.line {
             transform: translate(100%);
             transition: 0.5s ease;
 
-
             li {
                 a {
                     font-size: 24px;
@@ -659,9 +631,6 @@ div.line {
             transform: translate(0);
             z-index: 3;
         }
-
-
-
 
         .hamburger {
             display: block;
@@ -680,8 +649,6 @@ div.line {
         min-height: 0;
     }
 }
-
-
 
 .body-overlay {
     position: fixed;

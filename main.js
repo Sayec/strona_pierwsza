@@ -32,20 +32,16 @@ const t1 = new TimelineMax();
 
 t1.fromTo(
   cover,
-  1,
-  {
+  1, {
     height: "0%",
-  },
-  {
+  }, {
     height: "100%",
   }
 ).fromTo(
   cover,
-  1.2,
-  {
+  1.2, {
     width: "100%",
-  },
-  {
+  }, {
     width: "100%",
   }
 );
@@ -119,26 +115,21 @@ links.forEach((link) => {
   });
 });
 
-const slideList = [
-  {
+const slideList = [{
     img: "images/img1.jpg",
-    text:
-      "Oczywiście, możemy się pocieszać, że tam na Zachodzie to są zmiany na wielką skalę, społeczne przesunięcia tektoniczne, a tu w Polsce to takie malutkie przypadki, właściwie przypadeczki. Może tak, choć po pierwsze nikt tego nie zbadał (a radość z niewidzenia problemu jest, hm, krótkowzroczna) i po drugie – to, co jest w Ameryce, zaraz będzie i w Polsce, bo rozwój i te sprawy. A może nie ma powodu do zmartwień? Zamiast siedzieć na chłodzie i babrać się w błocie mogą w tym czasie robić coś bardziej pożytecznego, np. grać na fortepianie lub oglądać durne filmiki na jutjubie.",
+    text: "Oczywiście, możemy się pocieszać, że tam na Zachodzie to są zmiany na wielką skalę, społeczne przesunięcia tektoniczne, a tu w Polsce to takie malutkie przypadki, właściwie przypadeczki. Może tak, choć po pierwsze nikt tego nie zbadał (a radość z niewidzenia problemu jest, hm, krótkowzroczna) i po drugie – to, co jest w Ameryce, zaraz będzie i w Polsce, bo rozwój i te sprawy. A może nie ma powodu do zmartwień? Zamiast siedzieć na chłodzie i babrać się w błocie mogą w tym czasie robić coś bardziej pożytecznego, np. grać na fortepianie lub oglądać durne filmiki na jutjubie.",
   },
   {
     img: "images/img2.jpg",
-    text:
-      "Starania o zrównoważony rozwój można sprowadzić do postulatu sprawiedliwości międzypokoleniowej. Skoro my możemy korzystać z przyrody taką, jaka jest dziś, to samo prawo powinno przysługiwać naszym dzieciom, wnukom, wnuczkom, ich dzieciom i tak dalej. Ergo nasz rozwój nie może odbywać się kosztem przyrody. Termin ‘zrównoważony’ trudno uznać w tej sytuacji za intuicyjnie zrozumiały, ale ktoś tak wymyślił kilkanaście lat temu i teraz trzeba się go trzymać nie chcąc popaść w lingwistyczno-definicyjne dywagacje. Które oczywiście świetnie nadają się na kolejny tekst. Ale ten jest o czymś innym.",
+    text: "Starania o zrównoważony rozwój można sprowadzić do postulatu sprawiedliwości międzypokoleniowej. Skoro my możemy korzystać z przyrody taką, jaka jest dziś, to samo prawo powinno przysługiwać naszym dzieciom, wnukom, wnuczkom, ich dzieciom i tak dalej. Ergo nasz rozwój nie może odbywać się kosztem przyrody. Termin ‘zrównoważony’ trudno uznać w tej sytuacji za intuicyjnie zrozumiały, ale ktoś tak wymyślił kilkanaście lat temu i teraz trzeba się go trzymać nie chcąc popaść w lingwistyczno-definicyjne dywagacje. Które oczywiście świetnie nadają się na kolejny tekst. Ale ten jest o czymś innym.",
   },
   {
     img: "images/img3.jpg",
-    text:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, quisquam facilis, ab minima esse optio voluptatibus fugiat officia modi quidem recusandae placeat tempore beatae nihil laudantium blanditiis neque iure nesciunt.",
+    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, quisquam facilis, ab minima esse optio voluptatibus fugiat officia modi quidem recusandae placeat tempore beatae nihil laudantium blanditiis neque iure nesciunt.",
   },
   {
     img: "images/telescope-937871_1280.jpg",
-    text:
-      "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquamcupiditate,pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur excepturi error harum, inventore illum! lorem ",
+    text: "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquamcupiditate,pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur excepturi error harum, inventore illum! lorem ",
   },
 ];
 
@@ -184,26 +175,14 @@ let observer = new IntersectionObserver(navCheck, options);
 
 function navCheck(entries) {
   entries.forEach((entry) => {
-    // allAnchors.forEach(function (anchor) {
-    //     anchor.style.color = 'black';
-    // });
+
     if (entry.target.localName == "header") {
       console.log("header");
-      // const coords = activeAnchor.getBoundingClientRect();
-      // const directions = {
-      //     height: coords.height,
-      //     width: coords.width,
-      //     top: coords.top,
-      //     left: coords.left,
-      // };
+
       if (entry.isIntersecting) {
         allAnchors.forEach(function (anchor) {
           anchor.style.color = "black";
         });
-        // bubble.style.setProperty('left', `${directions.left}px`);
-        // bubble.style.setProperty('height', `${directions.height}px`);
-        // bubble.style.setProperty('top', `${directions.top}px`);
-        // bubble.style.setProperty('width', `${directions.width}px`)
         bubble.style.opacity = 0;
       }
       return;
@@ -213,8 +192,6 @@ function navCheck(entries) {
       const activeAnchor = document.querySelector(
         `[data-page=${classNameEntry}]`
       );
-      // activeAnchor.style.color = "black";
-      // activeAnchor.style.color = "white";
       const coords = activeAnchor.getBoundingClientRect();
       const directions = {
         height: coords.height,

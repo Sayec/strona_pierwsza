@@ -1,1 +1,1 @@
-# strona_pierwsza
+https://gallant-hamilton-32dd0a.netlify.app/

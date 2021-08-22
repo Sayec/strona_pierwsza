@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", Arial, Tahoma, sans-serif;
+  font-family: 'Poppins', Arial, Tahoma, sans-serif;
   box-sizing: border-box;
 }
 
@@ -57,7 +57,7 @@ nav {
   ul {
     display: flex;
     justify-content: flex-end;
-    width: 40%;
+    width: 60%;
 
     .bubble {
       position: absolute;
@@ -97,6 +97,7 @@ nav {
           display: flex;
           top: 100%;
           opacity: 1;
+          height: 100px;
           visibility: visible;
         }
       }
@@ -109,9 +110,9 @@ nav {
     position: absolute;
     // display: flex;
     flex-direction: column;
-    top: 0%;
+    top: 100%;
     z-index: 1;
-    height: 100px;
+    height: 0px;
     width: 100%;
     background-color: rgb(62, 94, 180);
     justify-content: center;
@@ -119,6 +120,7 @@ nav {
     opacity: 0;
     border-radius: 0 0 5px 5px;
     transition: 0.5s;
+    overflow: hidden;
     // user-select: none;
 
     li {
@@ -183,7 +185,7 @@ header {
     background-attachment: fixed;
 
     &::after {
-      content: "";
+      content: '';
       background-color: rgba(0, 0, 0, 0.3); // background: black;
       width: 100%;
       height: 100%;
@@ -282,7 +284,7 @@ section {
       }
 
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         height: 150px;
         width: 50px;
@@ -294,7 +296,7 @@ section {
       }
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         height: 150px;
         width: 50px;
@@ -329,8 +331,8 @@ section {
   }
 }
 
-section.offer {
-  .offers {
+section.projects {
+  .projects {
     width: 10%;
     height: 20%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -362,32 +364,32 @@ section.offer {
     }
   }
 
-  .offer1 {
+  .project1 {
     position: absolute;
     top: 10%;
     left: 10%;
   }
 
-  .offer2 {
+  .project2 {
     position: absolute;
     top: 30%;
     left: 70%;
   }
 
-  .offer3 {
+  .project3 {
     position: absolute;
     top: 50%;
     left: 55%;
   }
 
-  .offer4 {
+  .project4 {
     position: absolute;
     top: 80%;
     left: 25%;
   }
 }
 
-section.realizations {
+section.hobbies {
   div.flex .obraz,
   div.flex .tekst {
     opacity: 0;
@@ -425,7 +427,7 @@ section:nth-of-type(odd) {
     }
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       height: 150px;
       width: 50px;
@@ -437,7 +439,7 @@ section:nth-of-type(odd) {
     }
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       height: 150px;
       width: 50px;
@@ -450,7 +452,7 @@ section:nth-of-type(odd) {
   }
 }
 
-section.offer,
+section.projects,
 section.contact {
   height: 100vh;
 
@@ -464,7 +466,7 @@ section.contact {
   }
 }
 
-section.offer {
+section.projects {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(../images/nyc-5323170_1920.jpg) center center;
   background-attachment: fixed;
@@ -477,17 +479,45 @@ section.offer {
   }
 }
 
+section.partners {
+  min-height: 30vh;
+  height: 30vh;
+  .slider {
+    position: relative;
+    overflow: hidden;
+    height: 70%;
+    .slider-inner {
+      display: flex;
+      overflow-x: hidden;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .partner-slide {
+        background-color: #fff;
+        width: 150px;
+        height: 150px;
+        margin-left: 150px;
+        flex-shrink: 0;
+        p {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
 section.contact {
   text-align: center;
 
   .moving {
     height: 30%;
 
-    input[type="text"] {
+    input[type='text'] {
       width: 80%;
     }
 
-    input[type="submit"] {
+    input[type='submit'] {
       width: 100%;
     }
   }
@@ -508,7 +538,7 @@ footer {
   }
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     transform: translate(-50%, 0%) rotate(45deg);
     z-index: 0;

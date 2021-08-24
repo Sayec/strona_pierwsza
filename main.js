@@ -79,11 +79,11 @@ allSections.forEach((sec) => {
       'section.' + sec.classList[0] + ' .moving'
     );
     let testowe = section1.getBoundingClientRect();
-    console.log(
-      `sctroll ${window.scrollY} opffsettop ${section1.offsetTop} innerheight ${
-        section1.offsetTop + section1.offsetHeight * 0.5 - window.innerHeight
-      } ${window.innerHeight}`
-    );
+    // console.log(
+    //   `sctroll ${window.scrollY} opffsettop ${section1.offsetTop} innerheight ${
+    //     section1.offsetTop + section1.offsetHeight * 0.5 - window.innerHeight
+    //   } ${window.innerHeight}`
+    // );
     // if (window.scrollY > section1.offsetTop + section1.offsetHeight * 0.25 - window.innerHeight) {
     if (
       // testowe.top <
@@ -237,41 +237,66 @@ let pressed = false;
 let startx;
 let x;
 
-slider.addEventListener('mousedown', (e) => {
-  pressed = true;
-  startx = e.offsetX - innerSlider.offsetLeft;
-  slider.style.cursor = 'grab';
-});
-// slider.addEventListener('mouseenter', (e) => {});
+// slider.addEventListener('mousedown', (e) => {
+//   pressed = true;
+//   startx = e.offsetX - innerSlider.offsetLeft;
+//   slider.style.cursor = 'grab';
+// });
+// // slider.addEventListener('mouseenter', (e) => {});
 
-slider.addEventListener('mouseup', (e) => {
-  slider.style.cursor = 'auto';
-});
+// slider.addEventListener('mouseup', (e) => {
+//   slider.style.cursor = 'auto';
+// });
 
-window.addEventListener('mouseup', () => {
-  pressed = false;
-});
+// window.addEventListener('mouseup', () => {
+//   pressed = false;
+// });
 
-slider.addEventListener('mousemove', (e) => {
-  if (!pressed) return;
-  e.preventDefault();
-  x = e.offsetX;
-  innerSlider.style.left = `${x - startx}px`;
-  checkBoundary();
-});
+// slider.addEventListener('mousemove', (e) => {
+//   if (!pressed) return;
+//   e.preventDefault();
+//   x = e.offsetX;
+//   innerSlider.style.left = `${x - startx}px`;
+//   checkBoundary();
+// });
 
-function checkBoundary() {
-  let outer = slider.getBoundingClientRect();
-  let inner = innerSlider.getBoundingClientRect();
+// function checkBoundary() {
+//   let outer = slider.getBoundingClientRect();
+//   let inner = innerSlider.getBoundingClientRect();
 
-  if (parseInt(innerSlider.style.left) > 50) {
-    innerSlider.style.left = `50px`;
-  } else if (inner.right < outer.right - 50) {
-    innerSlider.style.left = `-${inner.width - outer.width + 50}px`;
-    console.log('test');
-    console.log(inner.width);
-    console.log(outer.width);
-    console.log(innerSlider.style.left);
-    console.log('test');
+//   if (parseInt(innerSlider.style.left) > 50) {
+//     innerSlider.style.left = `50px`;
+//   } else if (inner.right < outer.right - 50) {
+//     innerSlider.style.left = `-${inner.width - outer.width + 50}px`;
+//     console.log('test');
+//     console.log(inner.width);
+//     console.log(outer.width);
+//     console.log(innerSlider.style.left);
+//     console.log('test');
+//   }
+// }
+
+const rightButton = document.querySelector('div.right');
+const leftButton = document.querySelector('div.left');
+const allProjects = document.querySelectorAll('div.projects');
+let counter = 0;
+leftButton.style.display = 'none';
+rightButton.addEventListener('click', () => {
+  allProjects[counter].classList.add('prev');
+  allProjects[counter + 1].classList.remove('next');
+  counter++;
+  if (counter === allProjects.length - 1) {
+    rightButton.style.display = 'none';
   }
-}
+
+  leftButton.style.display = 'block';
+});
+leftButton.addEventListener('click', () => {
+  allProjects[counter].classList.add('next');
+  allProjects[counter - 1].classList.remove('prev');
+  counter--;
+  if (counter === 0) {
+    leftButton.style.display = 'none';
+  }
+  rightButton.style.display = 'block';
+});

@@ -226,6 +226,9 @@ section {
         .tekst {
           padding: 20px;
           flex-grow: 1;
+          p {
+            font-size: 22px;
+          }
         }
 
         .obraz {

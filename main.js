@@ -129,20 +129,16 @@ links.forEach((link) => {
 
 const slideList = [
   {
-    img: 'images/img1.jpg',
-    text: 'Oczywiście, możemy się pocieszać, że tam na Zachodzie to są zmiany na wielką skalę, społeczne przesunięcia tektoniczne, a tu w Polsce to takie malutkie przypadki, właściwie przypadeczki. Może tak, choć po pierwsze nikt tego nie zbadał (a radość z niewidzenia problemu jest, hm, krótkowzroczna) i po drugie – to, co jest w Ameryce, zaraz będzie i w Polsce, bo rozwój i te sprawy. A może nie ma powodu do zmartwień? Zamiast siedzieć na chłodzie i babrać się w błocie mogą w tym czasie robić coś bardziej pożytecznego, np. grać na fortepianie lub oglądać durne filmiki na jutjubie.',
+    img: 'images/droga-mleczna.jpg',
+    text: 'My biggest hooby is astronomy. I like to go outside on a cloudless night and view stars, galaxies and nebulae with my telescope. I love the feeling of being alone with the vastness of the universe and looking at objects millions of light years away. ',
   },
   {
-    img: 'images/img2.jpg',
-    text: 'Starania o zrównoważony rozwój można sprowadzić do postulatu sprawiedliwości międzypokoleniowej. Skoro my możemy korzystać z przyrody taką, jaka jest dziś, to samo prawo powinno przysługiwać naszym dzieciom, wnukom, wnuczkom, ich dzieciom i tak dalej. Ergo nasz rozwój nie może odbywać się kosztem przyrody. Termin ‘zrównoważony’ trudno uznać w tej sytuacji za intuicyjnie zrozumiały, ale ktoś tak wymyślił kilkanaście lat temu i teraz trzeba się go trzymać nie chcąc popaść w lingwistyczno-definicyjne dywagacje. Które oczywiście świetnie nadają się na kolejny tekst. Ale ten jest o czymś innym.',
+    img: 'images/games-2453777_1280.jpg',
+    text: 'My other passion is playing computer games. I mainly play online games to compete with other people, but I also really like a good single player game. I play League of Legends, Valorant or Chess.',
   },
   {
     img: 'images/img3.jpg',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, quisquam facilis, ab minima esse optio voluptatibus fugiat officia modi quidem recusandae placeat tempore beatae nihil laudantium blanditiis neque iure nesciunt.',
-  },
-  {
-    img: 'images/telescope-937871_1280.jpg',
-    text: '2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam adipisci nulla quisquamcupiditate,pariatur est numquam, ratione, ullam consequatur sit debitis? Nihil sed asperiores consequuntur excepturi error harum, inventore illum! lorem ',
+    text: 'SPORT',
   },
 ];
 
@@ -182,7 +178,7 @@ setTimeout(changeSlide, time);
 const bubble = document.querySelector('.bubble');
 const allAnchors = document.querySelectorAll('nav ul li a');
 const options = {
-  threshold: 0.6,
+  threshold: 0.8,
 };
 let observer = new IntersectionObserver(navCheck, options);
 

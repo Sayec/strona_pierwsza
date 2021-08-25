@@ -16,17 +16,17 @@ document.addEventListener('scroll', function (even) {
 });
 const projectsSection = document.querySelector('section.projects');
 let heightProjectsSection = window.innerHeight;
-if (window.innerWidth < 768) {
-  projectsSection.style.height = `${heightProjectsSection - div1}px`;
-}
-window.addEventListener('resize', () => {
-  const projectsSection = document.querySelector('section.projects');
-  heightProjectsSection = window.innerHeight;
-  console.log('test');
-  if (window.innerWidth < 768) {
-    projectsSection.style.height = `${heightProjectsSection - div1}px`;
-  }
-});
+// if (window.innerWidth < 768) {
+//   projectsSection.style.height = `${heightProjectsSection - div1}px`;
+// }
+// window.addEventListener('resize', () => {
+//   const projectsSection = document.querySelector('section.projects');
+//   heightProjectsSection = window.innerHeight;
+//   console.log('test');
+//   if (window.innerWidth < 768) {
+//     projectsSection.style.height = `${heightProjectsSection - div1}px`;
+//   }
+// });
 
 const t1 = new TimelineMax();
 
@@ -175,102 +175,11 @@ const changeSlide = () => {
 
 setTimeout(changeSlide, time);
 
-const bubble = document.querySelector('.bubble');
-const allAnchors = document.querySelectorAll('nav ul li a');
-const options = {
-  threshold: 0.8,
-};
-let observer = new IntersectionObserver(navCheck, options);
-
-function navCheck(entries) {
-  entries.forEach((entry) => {
-    if (entry.target.localName == 'header') {
-      console.log('header');
-
-      if (entry.isIntersecting) {
-        allAnchors.forEach(function (anchor) {
-          anchor.style.color = 'black';
-        });
-        bubble.style.opacity = 0;
-      }
-      return;
-    } else {
-      const classNameEntry = entry.target.className;
-      console.log(entry);
-      const activeAnchor = document.querySelector(
-        `[data-page=${classNameEntry}]`
-      );
-      const coords = activeAnchor.getBoundingClientRect();
-      const directions = {
-        height: coords.height,
-        width: coords.width,
-        top: coords.top,
-        left: coords.left,
-      };
-      if (entry.isIntersecting) {
-        console.log(activeAnchor);
-        allAnchors.forEach(function (anchor) {
-          anchor.style.color = 'black';
-        });
-        bubble.style.setProperty('left', `${directions.left}px`);
-        bubble.style.setProperty('height', `${directions.height}px`);
-        bubble.style.setProperty('top', `17.5px`);
-        bubble.style.setProperty('width', `${directions.width}px`);
-        bubble.style.opacity = 1;
-        activeAnchor.style.color = 'white';
-      }
-    }
-  });
-}
-allSections.forEach((section) => {
-  observer.observe(section);
-});
-observer.observe(header);
-
 let slider = document.querySelector('.slider');
 let innerSlider = document.querySelector('.slider-inner');
 let pressed = false;
 let startx;
 let x;
-
-// slider.addEventListener('mousedown', (e) => {
-//   pressed = true;
-//   startx = e.offsetX - innerSlider.offsetLeft;
-//   slider.style.cursor = 'grab';
-// });
-// // slider.addEventListener('mouseenter', (e) => {});
-
-// slider.addEventListener('mouseup', (e) => {
-//   slider.style.cursor = 'auto';
-// });
-
-// window.addEventListener('mouseup', () => {
-//   pressed = false;
-// });
-
-// slider.addEventListener('mousemove', (e) => {
-//   if (!pressed) return;
-//   e.preventDefault();
-//   x = e.offsetX;
-//   innerSlider.style.left = `${x - startx}px`;
-//   checkBoundary();
-// });
-
-// function checkBoundary() {
-//   let outer = slider.getBoundingClientRect();
-//   let inner = innerSlider.getBoundingClientRect();
-
-//   if (parseInt(innerSlider.style.left) > 50) {
-//     innerSlider.style.left = `50px`;
-//   } else if (inner.right < outer.right - 50) {
-//     innerSlider.style.left = `-${inner.width - outer.width + 50}px`;
-//     console.log('test');
-//     console.log(inner.width);
-//     console.log(outer.width);
-//     console.log(innerSlider.style.left);
-//     console.log('test');
-//   }
-// }
 
 const rightButton = document.querySelector('div.right');
 const leftButton = document.querySelector('div.left');

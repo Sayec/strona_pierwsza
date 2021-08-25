@@ -226,8 +226,12 @@ section {
         .tekst {
           padding: 20px;
           flex-grow: 1;
+
           p {
             font-size: 22px;
+            span {
+              color: rgb(62, 94, 180);
+            }
           }
         }
 
@@ -371,6 +375,7 @@ section.projects {
     position: absolute;
     transform: translate(0vw);
     h2 {
+      padding: 30px;
       font-size: 26px;
     }
     div.info-container {
@@ -380,7 +385,6 @@ section.projects {
     }
     p {
       font-size: 20px;
-      margin-top: 30px;
       transition: 0.1s ease-out;
     }
     ul {
@@ -497,8 +501,21 @@ section.partners {
 section.contact {
   text-align: center;
   margin-bottom: 0;
+  min-height: auto;
   .moving {
-    height: 30%;
+    // height: 30%;
+    h1 {
+      padding-bottom: 0px;
+    }
+  }
+  .content {
+    padding: 30px;
+    &::before {
+      content: none;
+    }
+    &::after {
+      content: none;
+    }
   }
   a {
     text-decoration: none;
@@ -519,20 +536,20 @@ footer {
     text-transform: uppercase;
     line-height: 50px;
   }
-
-  &:before {
-    content: '';
-    position: absolute;
-    transform: translate(-50%, 0%) rotate(45deg);
-    z-index: 0;
-    top: -50%;
-    left: 50%;
-    background-color: black;
-    height: 50px;
-    width: 50px;
-    z-index: -1;
-  }
 }
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     transform: translate(-50%, 0%) rotate(45deg);
+//     z-index: 0;
+//     top: -50%;
+//     left: 50%;
+//     background-color: black;
+//     height: 50px;
+//     width: 50px;
+//     z-index: -1;
+//   }
+// }
 
 div.line {
   position: fixed;
@@ -555,22 +572,15 @@ div.line {
     ul {
       margin-right: 0vw;
       width: 65%;
-
       li {
         a {
           font-size: 20px;
         }
       }
     }
-
-    // .nav-flex {
-    //     width: 90%;
-    // }
   }
 
   section {
-    // min-height: 150vh;
-
     .moving {
       .content {
         .flex {
@@ -582,18 +592,13 @@ div.line {
 
             img {
               height: 100%;
+              width: 100%;
             }
           }
         }
       }
     }
   }
-
-  // section:nth-of-type(odd) {
-  //     .flex {
-  //         flex-direction: column-reverse;
-  //     }
-  // }
 }
 
 @media (max-width: 768px) {
@@ -612,11 +617,8 @@ div.line {
     border-bottom: solid 1px black;
 
     .logo {
-      // width: 70%;
       padding-left: 10px;
     }
-
-    // .nav-flex {
     ul {
       z-index: 1;
       position: absolute;
@@ -651,13 +653,27 @@ div.line {
       z-index: 3;
     }
   }
-
+  section.projects {
+    .projects {
+      p {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      a {
+        display: block;
+        margin: 0px;
+        font-size: 24px;
+      }
+      ul {
+        margin-bottom: 30px;
+      }
+    }
+  }
   header {
     margin-top: 80px;
   }
 
   section.offer {
-    // height: 100%;
     min-height: 0;
   }
 }

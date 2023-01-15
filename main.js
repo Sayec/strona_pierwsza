@@ -1,3 +1,5 @@
+import hobby from './hobby.js';
+
 let div1 = document.querySelector('nav').offsetHeight;
 let menu = document.querySelector('nav');
 let header = document.querySelector('header');
@@ -13,8 +15,6 @@ document.addEventListener('scroll', function (even) {
     }
   }
 });
-const projectsSection = document.querySelector('section.projects');
-let heightProjectsSection = window.innerHeight;
 
 const t1 = new TimelineMax();
 
@@ -76,8 +76,6 @@ allSections.forEach((sec) => {
 });
 
 const tekst = document.querySelector('header h1');
-const tekstOffsetLeft = tekst.offsetLeft;
-const tekstOffsetTop = tekst.offsetTop;
 const burger = document.querySelector('.hamburger');
 const navUl = document.querySelector('nav ul');
 const links = document.querySelectorAll('nav ul li a');
@@ -95,26 +93,12 @@ links.forEach((link) => {
   });
 });
 
-const slideList = [
-  {
-    img: 'images/droga-mleczna.jpg',
-    text: 'My biggest hooby is astronomy. I like to go outside on a cloudless night and view stars, galaxies and nebulae with my telescope. I love the feeling of being alone with the vastness of the universe and looking at objects millions of light years away. ',
-  },
-  {
-    img: 'images/games-2453777_1280.jpg',
-    text: 'My other passion is playing computer games. I mainly play online games to compete with other people, but I also really like a good single player game. I play League of Legends, Valorant or Chess.',
-  },
-  {
-    img: 'images/soccer-488700_1280.jpg',
-    text: 'Watching sports events is something I like to do in my free time. I mainly interested in what is happening in football and Formula 1. In Formula 1, I am a fan of RedBull Racing team. When it comes to my activity, I like to ride a bike.  ',
-  },
-];
+const slideList = hobby();
 
 const image = document.querySelector('section.hobbies div.obraz img');
 const obraz = document.querySelector('section.hobbies div.obraz');
 const p = document.querySelector('section.hobbies div.tekst p');
 const tekst_obraz = document.querySelector('section.hobbies div.tekst');
-const flex = document.querySelector('section.hobbies div.flex');
 
 const time = 10000;
 let active = 0;
@@ -136,12 +120,6 @@ const changeSlide = () => {
 };
 
 setTimeout(changeSlide, time);
-
-let slider = document.querySelector('.slider');
-let innerSlider = document.querySelector('.slider-inner');
-let pressed = false;
-let startx;
-let x;
 
 const rightButton = document.querySelector('div.right');
 const leftButton = document.querySelector('div.left');

@@ -1,11 +1,10 @@
-let div_start = document.querySelector('nav').offsetTop;
 let div1 = document.querySelector('nav').offsetHeight;
 let menu = document.querySelector('nav');
 let header = document.querySelector('header');
 const cover = document.querySelector('header .cover');
 document.addEventListener('scroll', function (even) {
   if (window.innerWidth > 768) {
-    if (window.scrollY >= div1 + div_start) {
+    if (window.scrollY >= div1) {
       menu.classList.add('is-active');
       header.style.marginTop = div1 + 1 + 'px';
     } else {
@@ -137,8 +136,8 @@ const slideList = [
     text: 'My other passion is playing computer games. I mainly play online games to compete with other people, but I also really like a good single player game. I play League of Legends, Valorant or Chess.',
   },
   {
-    img: 'images/img3.jpg',
-    text: 'SPORT',
+    img: 'images/soccer-488700_1280.jpg',
+    text: 'Watching sports events is something I like to do in my free time. I mainly interested in what is happening in football and Formula 1. In Formula 1, I am a fan of RedBull Racing team. When it comes to my activity, I like to ride a bike.  ',
   },
 ];
 

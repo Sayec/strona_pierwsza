@@ -15,17 +15,6 @@ document.addEventListener('scroll', function (even) {
 });
 const projectsSection = document.querySelector('section.projects');
 let heightProjectsSection = window.innerHeight;
-// if (window.innerWidth < 768) {
-//   projectsSection.style.height = `${heightProjectsSection - div1}px`;
-// }
-// window.addEventListener('resize', () => {
-//   const projectsSection = document.querySelector('section.projects');
-//   heightProjectsSection = window.innerHeight;
-//   console.log('test');
-//   if (window.innerWidth < 768) {
-//     projectsSection.style.height = `${heightProjectsSection - div1}px`;
-//   }
-// });
 
 const t1 = new TimelineMax();
 
@@ -55,7 +44,6 @@ all.forEach((btn) => {
   ['click'].forEach(function (even) {
     btn.addEventListener(even, function (even) {
       even.preventDefault();
-      //secFuntion('.' + btn.className);
       let scrollDiv = document.querySelector(
         'section' + '.' + btn.className
       ).offsetTop;
@@ -71,22 +59,12 @@ all.forEach((btn) => {
 const allSections = document.querySelectorAll('section');
 
 allSections.forEach((sec) => {
-  // ['scroll'].forEach(function (even) {
   document.addEventListener('scroll', function (even) {
     let section1 = document.querySelector('section.' + sec.classList[0]);
     let flexSection = document.querySelector(
       'section.' + sec.classList[0] + ' .moving'
     );
-    let testowe = section1.getBoundingClientRect();
-    // console.log(
-    //   `sctroll ${window.scrollY} opffsettop ${section1.offsetTop} innerheight ${
-    //     section1.offsetTop + section1.offsetHeight * 0.5 - window.innerHeight
-    //   } ${window.innerHeight}`
-    // );
-    // if (window.scrollY > section1.offsetTop + section1.offsetHeight * 0.25 - window.innerHeight) {
     if (
-      // testowe.top <
-      // window.innerHeight * 0.75
       window.scrollY >
       section1.offsetTop + section1.offsetHeight * 0.5 - window.innerHeight
     ) {
@@ -100,15 +78,6 @@ allSections.forEach((sec) => {
 const tekst = document.querySelector('header h1');
 const tekstOffsetLeft = tekst.offsetLeft;
 const tekstOffsetTop = tekst.offsetTop;
-
-// const line = document.querySelector('div.line');
-// document.body.addEventListener('mousemove', () => {
-//     // LINE FOLLOWING MOUSE
-//     // line.style.transform = `translate(0%, -50%) rotate(${event.clientY/event.clientX}) `;
-//     if (event.clientY <= window.innerHeight * 0.5) line.style.transform = `rotate(-${Math.atan((window.innerHeight * 0.5-event.clientY)/event.clientX)*180/Math.PI}deg)`;
-//     else line.style.transform = `rotate(${Math.atan((event.clientY-window.innerHeight * 0.5)/event.clientX)*180/Math.PI}deg)`;
-// })
-
 const burger = document.querySelector('.hamburger');
 const navUl = document.querySelector('nav ul');
 const links = document.querySelectorAll('nav ul li a');
@@ -157,19 +126,13 @@ const changeSlide = () => {
   setTimeout(() => {
     image.src = slideList[active].img;
     p.textContent = slideList[active].text;
-    // flex.classList.toggle('active');
     obraz.classList.toggle('active');
     tekst_obraz.classList.toggle('active');
   }, 1000);
-  active++;
-  if (active === slideList.length) {
-    active = 0;
-  }
+  active = (active + 1) % slideList.length;
   setTimeout(() => {
-    console.log('dziala');
     changeSlide();
   }, time);
-  // setTimeout(changeSlide, time);
 };
 
 setTimeout(changeSlide, time);

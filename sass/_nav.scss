@@ -1,0 +1,98 @@
+// =============================================
+// Navigation
+// =============================================
+@use 'variables' as *;
+
+nav {
+  display: flex;
+  width: 100%;
+  top: -70px;
+  transition: $transition-speed;
+  padding: 5px 0;
+  align-items: center;
+  justify-content: space-around;
+
+  .logo {
+    img {
+      height: 70px;
+      display: block;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+      text-transform: uppercase;
+      list-style: none;
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      transition: $transition-speed;
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        transition: $transition-speed;
+        padding: 10px 10px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        color: $text-dark;
+
+        &:focus-visible {
+          outline: 2px solid $primary-color;
+          outline-offset: 2px;
+        }
+      }
+
+      &:hover {
+        background-color: $primary-color;
+
+        a {
+          color: $text-light;
+        }
+
+        > ul {
+          display: flex;
+          top: 100%;
+          opacity: 1;
+          height: 100px;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+
+  div {
+    width: 30px;
+    height: 4px;
+    background-color: $text-dark;
+    margin-top: 5px;
+  }
+}
+
+nav.is-active {
+  position: fixed;
+  background-color: $bg-light;
+  top: 0;
+  left: 0%;
+  z-index: 1;
+  border-bottom: solid 1px $text-dark;
+}

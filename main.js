@@ -85,28 +85,33 @@ allLinks.forEach((btn) => {
 
 // --- Scroll Animations for Sections ---
 const allSections = document.querySelectorAll('section');
-if (allSections.length > 0) {
-  document.addEventListener('scroll', throttle(function (e) {
-    allSections.forEach((sec) => {
-      // Get the first class of the section which identifies it
-      const secClass = sec.classList[0];
-      if (!secClass) return;
-      
-      const section1 = document.querySelector('section.' + secClass);
-      const flexSection = document.querySelector('section.' + secClass + ' .moving');
-      
-      if (section1 && flexSection) {
-        if (
-          window.scrollY >
-          section1.offsetTop + section1.offsetHeight * 0.5 - window.innerHeight
-        ) {
-          flexSection.classList.add('active');
-        } else {
-          flexSection.classList.remove('active');
-        }
+
+function checkSectionScroll() {
+  allSections.forEach((sec) => {
+    // Get the first class of the section which identifies it
+    const secClass = sec.classList[0];
+    if (!secClass) return;
+    
+    const section1 = document.querySelector('section.' + secClass);
+    const flexSection = document.querySelector('section.' + secClass + ' .moving');
+    
+    if (section1 && flexSection) {
+      if (
+        window.scrollY >
+        section1.offsetTop + section1.offsetHeight * 0.5 - window.innerHeight
+      ) {
+        flexSection.classList.add('active');
+      } else {
+        flexSection.classList.remove('active');
       }
-    });
-  }, 50));
+    }
+  });
+}
+
+if (allSections.length > 0) {
+  document.addEventListener('scroll', throttle(checkSectionScroll, 50));
+  // Call once on load to initialize sections currently in view
+  checkSectionScroll();
 }
 
 // --- Mobile Navigation (Hamburger) ---

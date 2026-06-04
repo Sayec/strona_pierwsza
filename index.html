@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/main2.css" />
+  <link rel="stylesheet" href="css/main2.css?v=3" />
 </head>
 
 <body>
@@ -62,63 +62,7 @@
       <div class="moving">
         <h2>PROJECTS</h2>
         <div class="content-container">
-          <div class="content">
-            <div class="projects project1">
-              <h3>My Astro App</h3>
-              <div class="info-container">
-                <p>
-                  This project was created to practice my skills in React and
-                  NodeJS. It can be used to store photos.
-                </p>
-                <p>Technologies Used</p>
-                <ul>
-                  <li>NodeJS 14.15.0</li>
-                  <li>ReactJS</li>
-                  <li>MongoDB</li>
-                  <li>Amazon Simple Storage Service (AWS S3)</li>
-                </ul>
-                <a href="https://github.com/Sayec/strona_express_react" rel="noopener noreferrer"
-                  target="_blank">GitHub</a>
-                <a href="https://myastroapp.herokuapp.com/" rel="noopener noreferrer" target="_blank">Live demo</a>
-              </div>
-            </div>
-            <div class="projects project2 next">
-              <h3>Planets</h3>
-              <div class="info-container">
-                <p>
-                  Simple site with information about planets in our Solar
-                  System.
-                </p>
-                <a href="https://github.com/Sayec/planets" rel="noopener noreferrer" target="_blank">GitHub</a>
-                <a href="https://quirky-agnesi-7190ff.netlify.app/" rel="noopener noreferrer" target="_blank">Live
-                  demo</a>
-              </div>
-            </div>
-            <div class="projects project3 next">
-              <h3>RiotAPI</h3>
-              <div class="info-container">
-                <p>
-                  Site to check players in League of Legends game. To check
-                  player type his nickname in Search window or choose 1 player
-                  from top of the site. This site can show rank player on
-                  Solo5v5 and last 10 games with stats and items.
-                </p>
-                <p>Technologies Used</p>
-                <ul>
-                  <li>NodeJS 14.15.0</li>
-                </ul>
-                <a href="https://github.com/Sayec/Riot-Api" rel="noopener noreferrer" target="_blank">GitHub</a>
-                <a href="https://checkplayerapp.herokuapp.com/" rel="noopener noreferrer" target="_blank">Live demo</a>
-              </div>
-            </div>
-            <div class="projects project4 next">
-              <h3>Portfolio</h3>
-              <div class="info-container">
-                <p>The page you are at right now!</p>
-                <a href="https://github.com/Sayec/strona_pierwsza" rel="noopener noreferrer"
-                  target="_blank">GitHub</a>
-              </div>
-            </div>
+          <div class="content" id="projects-container">
             <button class="left" type="button" aria-label="Previous project"><i
                 class="fas fa-chevron-left"></i></button>
             <button class="right" type="button" aria-label="Next project"><i
@@ -183,8 +127,8 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-  <script type="module" src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script type="module" src="main.js?v=3"></script>
 </body>
 
 </html>

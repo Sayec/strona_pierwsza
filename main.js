@@ -1,4 +1,5 @@
 import hobby from './hobby.js';
+import { projectsData } from './projects.js';
 
 // --- Helper: Throttle function for scroll events ---
 function throttle(func, limit) {
@@ -160,10 +161,52 @@ if (image && obraz && p && tekst_obraz && slideList.length > 0) {
 }
 
 // --- Projects Slider ---
+const projectsContainer = document.querySelector('#projects-container');
 const rightButton = document.querySelector('button.right');
 const leftButton = document.querySelector('button.left');
-const allProjects = document.querySelectorAll('div.projects');
 const dotsContainer = document.querySelector('.dots-container');
+
+if (projectsContainer && typeof projectsData !== 'undefined' && projectsData.length > 0) {
+  // 1. Generate slides dynamically
+  projectsData.forEach((project, idx) => {
+    const slide = document.createElement('div');
+    slide.classList.add('projects', `project${idx + 1}`);
+    if (idx !== 0) slide.classList.add('next');
+
+    let techHtml = '';
+    if (project.technologies && project.technologies.length > 0) {
+      techHtml = `<div class="tech-stack">
+                    <h4>Technologies Used</h4>
+                    <ul class="tech-tags">
+                      ${project.technologies.map(tech => `<li>${tech}</li>`).join('')}
+                    </ul>
+                  </div>`;
+    }
+
+    let linksHtml = '';
+    if (project.githubUrl) {
+      linksHtml += `<a href="${project.githubUrl}" rel="noopener noreferrer" target="_blank">GitHub</a>`;
+    }
+    if (project.liveUrl) {
+      linksHtml += `<a href="${project.liveUrl}" rel="noopener noreferrer" target="_blank">Live demo</a>`;
+    }
+
+    slide.innerHTML = `
+      <h3>${project.title}</h3>
+      <div class="info-container">
+        <p>${project.description}</p>
+        ${techHtml}
+        ${linksHtml}
+      </div>
+    `;
+
+    // Insert before the left button
+    projectsContainer.insertBefore(slide, leftButton);
+  });
+}
+
+// 2. Select newly created projects and attach logic
+const allProjects = document.querySelectorAll('div.projects');
 
 if (rightButton && leftButton && allProjects.length > 0) {
   let counter = 0;

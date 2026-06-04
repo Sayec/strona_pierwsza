@@ -346,9 +346,33 @@ section.projects .projects p {
   font-size: 20px;
   transition: 0.1s ease-out;
 }
-section.projects .projects ul {
-  margin-bottom: 50px;
-  font-size: 20px;
+section.projects .projects .tech-stack {
+  margin: 30px 0 40px 0;
+}
+section.projects .projects .tech-stack h4 {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+section.projects .projects .tech-stack .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+section.projects .projects .tech-stack .tech-tags li {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #fff;
+  backdrop-filter: blur(4px);
 }
 section.projects .projects a {
   display: inline-block;

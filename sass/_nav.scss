@@ -42,6 +42,19 @@ nav {
         letter-spacing: 1px;
         font-weight: 500;
         color: $text-dark;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 50%;
+          background-color: $primary-color;
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
 
         &:focus-visible {
           outline: 2px solid $primary-color;
@@ -50,10 +63,14 @@ nav {
       }
 
       &:hover {
-        background-color: $primary-color;
+        background-color: transparent;
 
         a {
-          color: $text-light;
+          color: $primary-color;
+
+          &::after {
+            width: 80%;
+          }
         }
 
         > ul {
@@ -90,9 +107,12 @@ nav {
 
 nav.is-active {
   position: fixed;
-  background-color: $bg-light;
+  background-color: rgba($bg-light, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   top: 0;
   left: 0%;
-  z-index: 1;
-  border-bottom: solid 1px $text-dark;
+  z-index: 10;
+  border-bottom: 1px solid rgba($text-dark, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }

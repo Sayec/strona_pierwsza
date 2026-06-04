@@ -12,6 +12,23 @@ body {
   font-family: "Poppins", Arial, Tahoma, sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(62, 94, 180);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(62, 94, 180, 0.8);
+}
+
 nav {
   display: flex;
   width: 100%;
@@ -48,16 +65,31 @@ nav ul li a {
   letter-spacing: 1px;
   font-weight: 500;
   color: #000;
+  position: relative;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: rgb(62, 94, 180);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 nav ul li a:focus-visible {
   outline: 2px solid rgb(62, 94, 180);
   outline-offset: 2px;
 }
 nav ul li:hover {
-  background-color: rgb(62, 94, 180);
+  background-color: transparent;
 }
 nav ul li:hover a {
-  color: #fff;
+  color: rgb(62, 94, 180);
+}
+nav ul li:hover a::after {
+  width: 80%;
 }
 nav ul li:hover > ul {
   display: flex;
@@ -87,11 +119,14 @@ nav ul li:hover > ul {
 
 nav.is-active {
   position: fixed;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   top: 0;
   left: 0%;
-  z-index: 1;
-  border-bottom: solid 1px #000;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 header {
@@ -108,6 +143,11 @@ header .cover {
   background-image: url(../images/milky-way-984050_1920.jpg);
   background-attachment: fixed;
 }
+@supports (-webkit-touch-callout: none) {
+  header .cover {
+    background-attachment: scroll;
+  }
+}
 header .cover::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.3);
@@ -122,15 +162,34 @@ header .cover img {
   align-items: center;
 }
 header h1 {
-  color: #fff;
+  background: linear-gradient(90deg, #fff 0%, rgb(62, 94, 180) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   letter-spacing: 3px;
   user-select: none;
+  font-size: 48px;
+}
+header h1 .cursor {
+  display: inline-block;
+  width: 4px;
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
 }
 
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 section {
   min-height: 30vh;
   scroll-behavior: smooth;
@@ -174,28 +233,6 @@ section .moving .content .flex .obraz {
   display: flex;
   justify-content: flex-end;
 }
-section .moving .content:before {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 50px;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transform: translate(-50%, -20%);
-}
-section .moving .content:after {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 50px;
-  background-color: #fff;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  transform: translate(50%, 20%);
-}
 section h2 {
   font-size: 36px;
   text-transform: uppercase;
@@ -208,15 +245,26 @@ section .moving.active {
 }
 section img {
   display: block;
-  width: 450px;
-  height: 300px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: 3/2;
   object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 section.projects {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/nyc-5323170_1920.jpg) center center;
   background-attachment: fixed;
+}
+@supports (-webkit-touch-callout: none) {
+  section.projects {
+    background-attachment: scroll;
+  }
+}
+section.projects {
   background-size: cover;
   margin-bottom: 5vh;
 }
@@ -229,33 +277,17 @@ section.projects .moving .content-container {
   margin: 0 auto;
   position: relative;
 }
-section.projects .moving .content-container:before {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 50px;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transform: translate(-50%, -20%);
-}
-section.projects .moving .content-container:after {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 50px;
-  background-color: #fff;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  transform: translate(50%, 20%);
-}
 section.projects .moving .content-container .content {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  position: relative;
 }
 section.projects .moving .content-container .content button.right,
 section.projects .moving .content-container .content button.left {
@@ -292,7 +324,7 @@ section.projects .projects {
   width: 100%;
   height: 100%;
   transition: 0.5s ease-out;
-  overflow: hidden;
+  overflow-y: auto;
   text-align: center;
   user-select: none;
   top: 0%;
@@ -322,16 +354,46 @@ section.projects .projects a {
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  margin: 40px;
-  font-size: 30px;
-  transition: opacity 0.3s;
+  margin: 15px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  background: linear-gradient(135deg, rgb(62, 94, 180), rgb(42.4008264463, 64.2851239669, 123.0991735537));
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 section.projects .projects a:hover {
-  opacity: 0.7;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 section.projects .projects a:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
+}
+section.projects .dots-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+section.projects .dots-container .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+section.projects .dots-container .dot.active {
+  background-color: rgb(62, 94, 180);
+  transform: scale(1.4);
+}
+section.projects .dots-container .dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 section.projects .prev {
   transform: translate(-100vw);
@@ -343,12 +405,13 @@ section.projects .next {
 section.hobbies div.flex .obraz,
 section.hobbies div.flex .tekst {
   opacity: 0;
-  transition: 1s;
+  transform: translateY(20px) scale(0.98);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 section.hobbies div.flex .obraz.active,
 section.hobbies div.flex .tekst.active {
   opacity: 1;
-  transition: 1s;
+  transform: translateY(0) scale(1);
 }
 
 section:nth-of-type(odd) {
@@ -392,10 +455,12 @@ section.contact .content::after {
 section.contact a {
   text-decoration: none;
   color: #fff;
-  transition: opacity 0.3s;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 section.contact a:hover {
-  opacity: 0.7;
+  color: rgb(131.5289256198, 153.479338843, 212.4710743802);
+  transform: scale(1.05);
 }
 section.contact a:focus-visible {
   outline: 2px solid #fff;
@@ -404,16 +469,40 @@ section.contact a:focus-visible {
 
 footer {
   width: 100%;
-  height: 50px;
   background-color: #000;
   position: relative;
   z-index: 1;
+  padding: 30px 0;
 }
-footer p {
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+footer .footer-content p {
   color: #fff;
   text-align: center;
-  text-transform: uppercase;
-  line-height: 50px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+footer .footer-content .socials {
+  display: flex;
+  gap: 20px;
+}
+footer .footer-content .socials a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+footer .footer-content .socials a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+footer .footer-content .socials a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 @media (max-width: 1024px) {

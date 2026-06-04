@@ -121,8 +121,8 @@ const changeSlide = () => {
 
 setTimeout(changeSlide, time);
 
-const rightButton = document.querySelector('div.right');
-const leftButton = document.querySelector('div.left');
+const rightButton = document.querySelector('button.right');
+const leftButton = document.querySelector('button.left');
 const allProjects = document.querySelectorAll('div.projects');
 let counter = 0;
 leftButton.style.display = 'none';

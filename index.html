@@ -1,72 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta
-      name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <title>Główna strona</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
 
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <!-- <link rel="stylesheet" href="css/mainv2.css"> -->
-    <link rel="stylesheet" href="css/main2.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kamil Brzezowski — Control Engineering & Robotics graduate. Portfolio showcasing web development projects built with React, Node.js, and more." />
+  <title>Kamil Brzezowski — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/main2.css" />
+</head>
 
-  <body>
-    <!-- <div class="line"></div> -->
-    <div class="body-overlay"></div>
-    <nav>
-      <div class="logo">
-        <a href="#"><img src="images/logo.png" alt="logo" /></a>
-      </div>
-      <!-- <div class="nav-flex"> -->
-
-      <ul>
-        <li><a data-page="about" href="about.html" class="about">About</a></li>
-        <li>
-          <a data-page="projects" href="projects" class="projects">Projects</a>
-        </li>
-        <li>
-          <a data-page="hobbies" href="hobbies" class="hobbies">Hobbies</a>
-        </li>
-        <li>
-          <a data-page="contact" href="contact" class="contact">Contact</a>
-        </li>
-        <div class="bubble"></div>
-      </ul>
-      <!-- </div> -->
-      <div class="hamburger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </nav>
-    <header>
-      <div class="cover">
-        <!-- <img src="images/milky-way-984050_1920.jpg" alt=""> -->
-      </div>
-      <h1>Hello!</h1>
-    </header>
+<body>
+  <div class="body-overlay"></div>
+  <nav>
+    <div class="logo">
+      <a href="#"><img src="images/logo.png" alt="Kamil Brzezowski — logo" /></a>
+    </div>
+    <ul>
+      <li><a data-page="about" href="#about" class="about">About</a></li>
+      <li>
+        <a data-page="projects" href="#projects" class="projects">Projects</a>
+      </li>
+      <li>
+        <a data-page="hobbies" href="#hobbies" class="hobbies">Hobbies</a>
+      </li>
+      <li>
+        <a data-page="contact" href="#contact" class="contact">Contact</a>
+      </li>
+    </ul>
+    <button class="hamburger" type="button" aria-label="Toggle navigation menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </button>
+  </nav>
+  <header>
+    <div class="cover"></div>
+    <h1>Hello!</h1>
+  </header>
+  <main>
     <section class="about" id="about">
       <div class="moving">
-        <h1>ABOUT ME</h1>
+        <h2>ABOUT ME</h2>
         <div class="content">
           <div class="flex">
-            <!-- <div class="obraz">
-              <img src="images/droga-mleczna.jpg" alt="" />
-            </div> -->
             <div class="tekst">
               <p>
                 Hi, I'm <span>Kamil</span>, I have a Master's degree in Control
@@ -81,11 +60,11 @@
     </section>
     <section class="projects" id="projects">
       <div class="moving">
-        <h1>PROJECTS</h1>
+        <h2>PROJECTS</h2>
         <div class="content-container">
           <div class="content">
             <div class="projects project1">
-              <h2>My Astro App</h2>
+              <h3>My Astro App</h3>
               <div class="info-container">
                 <p>
                   This project was created to practice my skills in React and
@@ -98,27 +77,25 @@
                   <li>MongoDB</li>
                   <li>Amazon Simple Storage Service (AWS S3)</li>
                 </ul>
-                <a href="https://github.com/Sayec/strona_express_react"
-                  >GitHub</a
-                >
-                <a href="https://myastroapp.herokuapp.com/">Live demo</a>
+                <a href="https://github.com/Sayec/strona_express_react" rel="noopener noreferrer"
+                  target="_blank">GitHub</a>
+                <a href="https://myastroapp.herokuapp.com/" rel="noopener noreferrer" target="_blank">Live demo</a>
               </div>
             </div>
             <div class="projects project2 next">
-              <h2>Planets</h2>
+              <h3>Planets</h3>
               <div class="info-container">
                 <p>
                   Simple site with information about planets in our Solar
                   System.
                 </p>
-                <a href="https://github.com/Sayec/planets">GitHub</a>
-                <a href="https://quirky-agnesi-7190ff.netlify.app/"
-                  >Live demo</a
-                >
+                <a href="https://github.com/Sayec/planets" rel="noopener noreferrer" target="_blank">GitHub</a>
+                <a href="https://quirky-agnesi-7190ff.netlify.app/" rel="noopener noreferrer" target="_blank">Live
+                  demo</a>
               </div>
             </div>
             <div class="projects project3 next">
-              <h2>RiotAPI</h2>
+              <h3>RiotAPI</h3>
               <div class="info-container">
                 <p>
                   Site to check players in League of Legends game. To check
@@ -130,34 +107,37 @@
                 <ul>
                   <li>NodeJS 14.15.0</li>
                 </ul>
-                <a href="https://github.com/Sayec/Riot-Api">GitHub</a>
-                <a href="https://checkplayerapp.herokuapp.com/">Live demo</a>
+                <a href="https://github.com/Sayec/Riot-Api" rel="noopener noreferrer" target="_blank">GitHub</a>
+                <a href="https://checkplayerapp.herokuapp.com/" rel="noopener noreferrer" target="_blank">Live demo</a>
               </div>
             </div>
             <div class="projects project4 next">
-              <h2>Portfolio</h2>
+              <h3>Portfolio</h3>
               <div class="info-container">
                 <p>The page you are at right now!</p>
-                <a href="https://github.com/Sayec/strona_pierwsza">GitHub</a>
+                <a href="https://github.com/Sayec/strona_pierwsza" rel="noopener noreferrer"
+                  target="_blank">GitHub</a>
               </div>
             </div>
-            <div class="left"><i class="fas fa-chevron-left"></i></div>
-            <div class="right"><i class="fas fa-chevron-right"></i></div>
+            <button class="left" type="button" aria-label="Previous project"><i
+                class="fas fa-chevron-left"></i></button>
+            <button class="right" type="button" aria-label="Next project"><i
+                class="fas fa-chevron-right"></i></button>
           </div>
         </div>
       </div>
     </section>
     <section class="hobbies" id="hobbies">
       <div class="moving">
-        <h1>MY HOBBIES</h1>
+        <h2>MY HOBBIES</h2>
         <div class="content">
           <div class="flex">
             <div class="obraz active">
-              <img src="images/droga-mleczna.jpg" alt="" />
+              <img src="images/droga-mleczna.jpg" alt="Milky Way galaxy visible in the night sky" />
             </div>
             <div class="tekst active">
               <p>
-                My biggest hooby is astronomy. I like to go outside on a
+                My biggest hobby is astronomy. I like to go outside on a
                 cloudless night and view stars, galaxies and nebulae with my
                 telescope. I love the feeling of being alone with the vastness
                 of the universe and looking at objects millions of light years
@@ -170,35 +150,36 @@
     </section>
     <section class="contact" id="contact">
       <div class="moving">
-        <h1>CONTACT</h1>
+        <h2>CONTACT</h2>
         <div class="content">
           <p>
-            <i class="fas fa-envelope"></i> :
+            <i class="fas fa-envelope" aria-hidden="true"></i> :
             <a href="mailto:kamilbrzezowski@wp.pl">kamilbrzezowski@wp.pl</a>
           </p>
           <p>
-            <i class="fas fa-phone"></i> :
+            <i class="fas fa-phone" aria-hidden="true"></i> :
             <a href="tel:+48781189972">781 189 972</a>
           </p>
           <p>
-            <i class="fab fa-github"></i> :
-            <a href="https://github.com/Sayec">Sayec</a>
+            <i class="fab fa-github" aria-hidden="true"></i> :
+            <a href="https://github.com/Sayec" rel="noopener noreferrer" target="_blank">Sayec</a>
           </p>
           <p>
-            <i class="fab fa-linkedin"></i> :
-            <a href="https://www.linkedin.com/in/kamil-brzezowski-5177a8142/"
-              >Kamil Brzezowski</a
-            >
+            <i class="fab fa-linkedin" aria-hidden="true"></i> :
+            <a href="https://www.linkedin.com/in/kamil-brzezowski-5177a8142/" rel="noopener noreferrer"
+              target="_blank">Kamil Brzezowski</a>
           </p>
         </div>
       </div>
     </section>
-    <footer>
-      <p>Kamil Brzezowski</p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="module" src="main.js"></script>
-  </body>
+  </main>
+  <footer>
+    <p>Kamil Brzezowski</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>
